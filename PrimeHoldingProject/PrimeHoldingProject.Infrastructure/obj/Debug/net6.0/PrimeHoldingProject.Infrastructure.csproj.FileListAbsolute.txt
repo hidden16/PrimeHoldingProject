@@ -1,0 +1,14 @@
+C:\Users\iksann\Desktop\PrimeHolding\PrimeHoldingProject\PrimeHoldingProject.Infrastructure\bin\Debug\net6.0\PrimeHoldingProject.Infrastructure.deps.json
+C:\Users\iksann\Desktop\PrimeHolding\PrimeHoldingProject\PrimeHoldingProject.Infrastructure\bin\Debug\net6.0\PrimeHoldingProject.Infrastructure.runtimeconfig.json
+C:\Users\iksann\Desktop\PrimeHolding\PrimeHoldingProject\PrimeHoldingProject.Infrastructure\bin\Debug\net6.0\PrimeHoldingProject.Infrastructure.dll
+C:\Users\iksann\Desktop\PrimeHolding\PrimeHoldingProject\PrimeHoldingProject.Infrastructure\bin\Debug\net6.0\PrimeHoldingProject.Infrastructure.pdb
+C:\Users\iksann\Desktop\PrimeHolding\PrimeHoldingProject\PrimeHoldingProject.Infrastructure\obj\Debug\net6.0\PrimeHoldingProject.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\iksann\Desktop\PrimeHolding\PrimeHoldingProject\PrimeHoldingProject.Infrastructure\obj\Debug\net6.0\PrimeHoldingProject.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\iksann\Desktop\PrimeHolding\PrimeHoldingProject\PrimeHoldingProject.Infrastructure\obj\Debug\net6.0\PrimeHoldingProject.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\iksann\Desktop\PrimeHolding\PrimeHoldingProject\PrimeHoldingProject.Infrastructure\obj\Debug\net6.0\PrimeHoldingProject.Infrastructure.AssemblyInfo.cs
+C:\Users\iksann\Desktop\PrimeHolding\PrimeHoldingProject\PrimeHoldingProject.Infrastructure\obj\Debug\net6.0\PrimeHoldingProject.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\iksann\Desktop\PrimeHolding\PrimeHoldingProject\PrimeHoldingProject.Infrastructure\obj\Debug\net6.0\PrimeHoldingProject.Infrastructure.dll
+C:\Users\iksann\Desktop\PrimeHolding\PrimeHoldingProject\PrimeHoldingProject.Infrastructure\obj\Debug\net6.0\refint\PrimeHoldingProject.Infrastructure.dll
+C:\Users\iksann\Desktop\PrimeHolding\PrimeHoldingProject\PrimeHoldingProject.Infrastructure\obj\Debug\net6.0\PrimeHoldingProject.Infrastructure.pdb
+C:\Users\iksann\Desktop\PrimeHolding\PrimeHoldingProject\PrimeHoldingProject.Infrastructure\obj\Debug\net6.0\PrimeHoldingProject.Infrastructure.genruntimeconfig.cache
+C:\Users\iksann\Desktop\PrimeHolding\PrimeHoldingProject\PrimeHoldingProject.Infrastructure\obj\Debug\net6.0\ref\PrimeHoldingProject.Infrastructure.dll
