@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\iksann\\Desktop\\PrimeHolding\\PrimeHoldingProject\\PrimeHoldingProject\\PrimeHoldingProject.csproj": {}
+    "C:\\Users\\iksann\\Documents\\GitHub\\PrimeHoldingProject\\PrimeHoldingProject\\PrimeHoldingProject\\PrimeHoldingProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\iksann\\Desktop\\PrimeHolding\\PrimeHoldingProject\\PrimeHoldingProject.Core\\PrimeHoldingProject.Core.csproj": {
+    "C:\\Users\\iksann\\Documents\\GitHub\\PrimeHoldingProject\\PrimeHoldingProject\\PrimeHoldingProject.Core\\PrimeHoldingProject.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\iksann\\Desktop\\PrimeHolding\\PrimeHoldingProject\\PrimeHoldingProject.Core\\PrimeHoldingProject.Core.csproj",
+        "projectUniqueName": "C:\\Users\\iksann\\Documents\\GitHub\\PrimeHoldingProject\\PrimeHoldingProject\\PrimeHoldingProject.Core\\PrimeHoldingProject.Core.csproj",
         "projectName": "PrimeHoldingProject.Core",
-        "projectPath": "C:\\Users\\iksann\\Desktop\\PrimeHolding\\PrimeHoldingProject\\PrimeHoldingProject.Core\\PrimeHoldingProject.Core.csproj",
+        "projectPath": "C:\\Users\\iksann\\Documents\\GitHub\\PrimeHoldingProject\\PrimeHoldingProject\\PrimeHoldingProject.Core\\PrimeHoldingProject.Core.csproj",
         "packagesPath": "C:\\Users\\iksann\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\iksann\\Desktop\\PrimeHolding\\PrimeHoldingProject\\PrimeHoldingProject.Core\\obj\\",
+        "outputPath": "C:\\Users\\iksann\\Documents\\GitHub\\PrimeHoldingProject\\PrimeHoldingProject\\PrimeHoldingProject.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\iksann\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\iksann\\Desktop\\PrimeHolding\\PrimeHoldingProject\\PrimeHoldingProject.Infrastructure\\PrimeHoldingProject.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\iksann\\Desktop\\PrimeHolding\\PrimeHoldingProject\\PrimeHoldingProject.Infrastructure\\PrimeHoldingProject.Infrastructure.csproj"
+              "C:\\Users\\iksann\\Documents\\GitHub\\PrimeHoldingProject\\PrimeHoldingProject\\PrimeHoldingProject.Infrastructure\\PrimeHoldingProject.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\iksann\\Documents\\GitHub\\PrimeHoldingProject\\PrimeHoldingProject\\PrimeHoldingProject.Infrastructure\\PrimeHoldingProject.Infrastructure.csproj"
               }
             }
           }
@@ -43,6 +43,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "HtmlSanitizer": {
+              "target": "Package",
+              "version": "[6.0.453, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -63,14 +69,14 @@
         }
       }
     },
-    "C:\\Users\\iksann\\Desktop\\PrimeHolding\\PrimeHoldingProject\\PrimeHoldingProject.Infrastructure\\PrimeHoldingProject.Infrastructure.csproj": {
+    "C:\\Users\\iksann\\Documents\\GitHub\\PrimeHoldingProject\\PrimeHoldingProject\\PrimeHoldingProject.Infrastructure\\PrimeHoldingProject.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\iksann\\Desktop\\PrimeHolding\\PrimeHoldingProject\\PrimeHoldingProject.Infrastructure\\PrimeHoldingProject.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\iksann\\Documents\\GitHub\\PrimeHoldingProject\\PrimeHoldingProject\\PrimeHoldingProject.Infrastructure\\PrimeHoldingProject.Infrastructure.csproj",
         "projectName": "PrimeHoldingProject.Infrastructure",
-        "projectPath": "C:\\Users\\iksann\\Desktop\\PrimeHolding\\PrimeHoldingProject\\PrimeHoldingProject.Infrastructure\\PrimeHoldingProject.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\iksann\\Documents\\GitHub\\PrimeHoldingProject\\PrimeHoldingProject\\PrimeHoldingProject.Infrastructure\\PrimeHoldingProject.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\iksann\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\iksann\\Desktop\\PrimeHolding\\PrimeHoldingProject\\PrimeHoldingProject.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\iksann\\Documents\\GitHub\\PrimeHoldingProject\\PrimeHoldingProject\\PrimeHoldingProject.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\iksann\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -134,14 +140,14 @@
         }
       }
     },
-    "C:\\Users\\iksann\\Desktop\\PrimeHolding\\PrimeHoldingProject\\PrimeHoldingProject\\PrimeHoldingProject.csproj": {
+    "C:\\Users\\iksann\\Documents\\GitHub\\PrimeHoldingProject\\PrimeHoldingProject\\PrimeHoldingProject\\PrimeHoldingProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\iksann\\Desktop\\PrimeHolding\\PrimeHoldingProject\\PrimeHoldingProject\\PrimeHoldingProject.csproj",
+        "projectUniqueName": "C:\\Users\\iksann\\Documents\\GitHub\\PrimeHoldingProject\\PrimeHoldingProject\\PrimeHoldingProject\\PrimeHoldingProject.csproj",
         "projectName": "PrimeHoldingProject",
-        "projectPath": "C:\\Users\\iksann\\Desktop\\PrimeHolding\\PrimeHoldingProject\\PrimeHoldingProject\\PrimeHoldingProject.csproj",
+        "projectPath": "C:\\Users\\iksann\\Documents\\GitHub\\PrimeHoldingProject\\PrimeHoldingProject\\PrimeHoldingProject\\PrimeHoldingProject.csproj",
         "packagesPath": "C:\\Users\\iksann\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\iksann\\Desktop\\PrimeHolding\\PrimeHoldingProject\\PrimeHoldingProject\\obj\\",
+        "outputPath": "C:\\Users\\iksann\\Documents\\GitHub\\PrimeHoldingProject\\PrimeHoldingProject\\PrimeHoldingProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\iksann\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -158,8 +164,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\iksann\\Desktop\\PrimeHolding\\PrimeHoldingProject\\PrimeHoldingProject.Core\\PrimeHoldingProject.Core.csproj": {
-                "projectPath": "C:\\Users\\iksann\\Desktop\\PrimeHolding\\PrimeHoldingProject\\PrimeHoldingProject.Core\\PrimeHoldingProject.Core.csproj"
+              "C:\\Users\\iksann\\Documents\\GitHub\\PrimeHoldingProject\\PrimeHoldingProject\\PrimeHoldingProject.Core\\PrimeHoldingProject.Core.csproj": {
+                "projectPath": "C:\\Users\\iksann\\Documents\\GitHub\\PrimeHoldingProject\\PrimeHoldingProject\\PrimeHoldingProject.Core\\PrimeHoldingProject.Core.csproj"
               }
             }
           }

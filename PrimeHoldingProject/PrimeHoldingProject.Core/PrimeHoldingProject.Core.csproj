@@ -7,7 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="HtmlSanitizer" Version="6.0.453" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\PrimeHoldingProject.Infrastructure\PrimeHoldingProject.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Contracts\" />
+    <Folder Include="Constants\" />
+    <Folder Include="MultiModels\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>
