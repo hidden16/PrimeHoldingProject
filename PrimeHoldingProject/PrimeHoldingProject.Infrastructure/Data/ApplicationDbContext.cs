@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using PrimeHoldingProject.Infrastructure.Data.Configuration;
 using PrimeHoldingProject.Infrastructure.Data.Models;
 
 namespace PrimeHoldingProject.Infrastructure.Data
@@ -13,6 +14,9 @@ namespace PrimeHoldingProject.Infrastructure.Data
         }
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            // Apply the configuration when creating the first migration or once when updating the database to the latest migration, after that comment the configuration to prevent collision in migrations.
+            //builder.ApplyConfiguration(new SeedRoleConfiguration());
+
             builder.Entity<ApplicationUser>()
                 .HasOne(e => e.Employee)
                 .WithOne(au => au.ApplicationUser)

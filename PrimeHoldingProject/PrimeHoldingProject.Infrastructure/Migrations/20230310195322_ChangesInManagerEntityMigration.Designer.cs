@@ -12,8 +12,8 @@ using PrimeHoldingProject.Infrastructure.Data;
 namespace PrimeHoldingProject.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230309154654_InitialEntityCreationMigration")]
-    partial class InitialEntityCreationMigration
+    [Migration("20230310195322_ChangesInManagerEntityMigration")]
+    partial class ChangesInManagerEntityMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -290,7 +290,7 @@ namespace PrimeHoldingProject.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Salary")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(7,2)");
 
                     b.HasKey("Id");
 
@@ -340,6 +340,9 @@ namespace PrimeHoldingProject.Infrastructure.Migrations
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<decimal>("Salary")
+                        .HasColumnType("decimal(7,2)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ApplicationUserId")
@@ -354,6 +357,9 @@ namespace PrimeHoldingProject.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<DateTime?>("CompletionDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
@@ -363,6 +369,9 @@ namespace PrimeHoldingProject.Infrastructure.Migrations
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DueDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<Guid?>("EmployeeId")
                         .HasColumnType("uniqueidentifier");

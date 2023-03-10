@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6S0ipEhm2SLoS9dGrB+h0n0ro6CcSFL8YqO9MhG2rDc=",
+  "Hash": "6Fzk+KV6gMNyTFjBE4wm7b9dZRRxQDV5I1xPUn4/rcs=",
   "Source": "PrimeHoldingProject",
   "BasePath": "_content/PrimeHoldingProject",
   "Mode": "Default",
@@ -2089,6 +2089,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\iksann\\Documents\\GitHub\\PrimeHoldingProject\\PrimeHoldingProject\\PrimeHoldingProject\\wwwroot\\lib\\toastr\\toastr.min.css",
+      "SourceId": "PrimeHoldingProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\iksann\\Documents\\GitHub\\PrimeHoldingProject\\PrimeHoldingProject\\PrimeHoldingProject\\wwwroot\\",
+      "BasePath": "_content/PrimeHoldingProject",
+      "RelativePath": "lib/toastr/toastr.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\toastr\\toastr.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\iksann\\Documents\\GitHub\\PrimeHoldingProject\\PrimeHoldingProject\\PrimeHoldingProject\\wwwroot\\lib\\toastr\\toastr.min.js",
+      "SourceId": "PrimeHoldingProject",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\iksann\\Documents\\GitHub\\PrimeHoldingProject\\PrimeHoldingProject\\PrimeHoldingProject\\wwwroot\\",
+      "BasePath": "_content/PrimeHoldingProject",
+      "RelativePath": "lib/toastr/toastr.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\toastr\\toastr.min.js"
     }
   ]
 }

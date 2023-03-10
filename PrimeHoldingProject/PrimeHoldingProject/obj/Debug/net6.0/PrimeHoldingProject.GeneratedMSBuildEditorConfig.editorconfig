@@ -20,12 +20,20 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/iksann/Documents/GitHub/PrimeHoldingProject/PrimeHoldingProject/PrimeHoldingProject/Views/Employee/Become.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQmVjb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/iksann/Documents/GitHub/PrimeHoldingProject/PrimeHoldingProject/PrimeHoldingProject/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/iksann/Documents/GitHub/PrimeHoldingProject/PrimeHoldingProject/PrimeHoldingProject/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iksann/Documents/GitHub/PrimeHoldingProject/PrimeHoldingProject/PrimeHoldingProject/Views/Shared/_UserMessages.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Vc2VyTWVzc2FnZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/iksann/Documents/GitHub/PrimeHoldingProject/PrimeHoldingProject/PrimeHoldingProject/Views/Shared/_ValidationScriptsPartial.cshtml]

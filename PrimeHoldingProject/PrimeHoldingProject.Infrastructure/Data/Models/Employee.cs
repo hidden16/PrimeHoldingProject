@@ -19,6 +19,7 @@ namespace PrimeHoldingProject.Infrastructure.Data.Models
         [Required]
         public DateTime BirthDate { get; set; }
         [Required]
+        [Column(TypeName = "decimal(7,2)")]
         public decimal Salary { get; set; }
         [Required]
         public Guid ApplicationUserId { get; set; }

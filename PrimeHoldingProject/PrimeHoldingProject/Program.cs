@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PrimeHoldingProject.Infrastructure.Data;
 using PrimeHoldingProject.Infrastructure.Data.Models;
+using PrimeHoldingProject.UserServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +31,7 @@ builder.Services.AddControllersWithViews(options =>
     options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
 });
 
+builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddApplicationServices();
 
 builder.Services.ConfigureApplicationCookie(options =>

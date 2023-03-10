@@ -93,6 +93,7 @@ namespace PrimeHoldingProject.Controllers
                 LastName = Sanitize(model.LastName),
                 BirthDate = model.BirthDate,
                 UserName = $"{model.FirstName}{model.LastName}",
+                PhoneNumber = model.PhoneNumber
             };
 
             var createResult = await userManager.CreateAsync(user, model.Password);
@@ -100,7 +101,6 @@ namespace PrimeHoldingProject.Controllers
             {
                 return RedirectToAction(nameof(Login));
             }
-
             foreach (var error in createResult.Errors)
             {
                 ModelState.AddModelError("", error.Description);

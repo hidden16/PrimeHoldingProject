@@ -288,7 +288,7 @@ namespace PrimeHoldingProject.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Salary")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(7,2)");
 
                     b.HasKey("Id");
 
@@ -337,6 +337,9 @@ namespace PrimeHoldingProject.Infrastructure.Migrations
 
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
+
+                    b.Property<decimal>("Salary")
+                        .HasColumnType("decimal(7,2)");
 
                     b.HasKey("Id");
 
