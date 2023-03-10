@@ -11,6 +11,9 @@ namespace PrimeHoldingProject.Infrastructure.Data.Models
         public string Title { get; set; } = null!;
         [Required]
         public string Description { get; set; } = null!;
+        [Required]
+        public DateTime DueDate { get; set; }
+        public DateTime? CompletionDate { get; set; }
 
         public Guid? EmployeeId { get; set; }
         public Employee? Employee { get; set; }

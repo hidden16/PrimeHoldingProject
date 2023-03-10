@@ -21,7 +21,6 @@ namespace PrimeHoldingProject.Core.Models.User
         [Required]
         [EmailAddress]
         public string Email { get; set; } = null!;
-
         [Required]
         [DataType(DataType.Password)]
         [StringLength(PasswordMaxLength, MinimumLength = PasswordMinLength, ErrorMessage = PasswordErrorMessage)]
