@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using PrimeHoldingProject.Core.Models.Employee;
+using System.ComponentModel.DataAnnotations;
 
 namespace PrimeHoldingProject.Core.Models.User
 {
@@ -15,5 +16,7 @@ namespace PrimeHoldingProject.Core.Models.User
         [Required]
         public DateTime BirthDate { get; set; }
         public decimal Salary { get; set; }
+        public Guid ManagerId { get; set; }
+        public List<EmployeeManagerViewModel>? Managers { get; set; }
     }
 }

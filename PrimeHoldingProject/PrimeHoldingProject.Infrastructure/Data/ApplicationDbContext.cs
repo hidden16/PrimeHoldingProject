@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using PrimeHoldingProject.Infrastructure.Data.Configuration;
 using PrimeHoldingProject.Infrastructure.Data.Models;
+using System.Security.Cryptography.X509Certificates;
 
 namespace PrimeHoldingProject.Infrastructure.Data
 {
@@ -26,6 +27,13 @@ namespace PrimeHoldingProject.Infrastructure.Data
                .HasOne(e => e.Manager)
                .WithOne(au => au.ApplicationUser)
                .HasForeignKey<Manager>(au => au.ApplicationUserId);
+
+            builder.Entity<Employee>()
+                .HasOne(x => x.Manager)
+                .WithMany(x => x.Employees)
+                .HasForeignKey(x => x.ManagerId)
+                .OnDelete(DeleteBehavior.Restrict);
+                
 
             base.OnModelCreating(builder);
         }

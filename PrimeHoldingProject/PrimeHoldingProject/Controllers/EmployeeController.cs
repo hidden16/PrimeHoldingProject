@@ -27,12 +27,12 @@ namespace PrimeHoldingProject.Controllers
         {
             try
             {
-                if (User.IsInRole(EmployeeConstant))
+                if (User.IsInRole(EmployeeConstant) || User.IsInRole(ManagerConstant))
                 {
-                    TempData[ErrorMessage] = "You are already an employee!";
+                    TempData[ErrorMessage] = "You are already an employee/manager!";
                     return RedirectToAction("Index", "Home");
                 }
-                var userId = User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value;
+                var userId = GetUserId();
                 var user = await userService.GetUserEmployeeInfoAsync(Guid.Parse(userId));
                 return View(user);
             }
@@ -52,7 +52,7 @@ namespace PrimeHoldingProject.Controllers
                     ModelState.AddModelError("", "Invalid info.");
                     return View();
                 }
-                var userId = User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value;
+                var userId = GetUserId();
                 await employeeService.BecomeEmployeeAsync(model, Guid.Parse(userId));
             }
             catch (ArgumentException)
@@ -61,6 +61,50 @@ namespace PrimeHoldingProject.Controllers
                 return View(model);
             }
             return RedirectToAction("Index", "Home");
+        }
+        [HttpGet]
+        public async Task<IActionResult> Edit()
+        {
+            try
+            {
+                var userId = GetUserId();
+                var user = await employeeService.GetEmployeeInformation(Guid.Parse(userId));
+                return View(user);
+            }
+            catch (ArgumentException)
+            {
+                TempData[ErrorMessage] = "An error occured!";
+                return RedirectToAction("Index", "Home");
+            }
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(UserEmployeeViewModel model)
+        {
+            try
+            {
+                var userId = GetUserId();
+                await employeeService.EditEmployee(model, Guid.Parse(userId));
+                TempData[SuccessMessage] = "You successfully updated your information!";
+                return RedirectToAction("Index", "Home");
+            }
+            catch (ArgumentNullException)
+            {
+                TempData[ErrorMessage] = "Invalid Employee.";
+                return RedirectToAction("Index", "Home");
+
+            }
+            catch (ArgumentException)
+            {
+                TempData[ErrorMessage] = "Invalid user.";
+                return RedirectToAction("Index", "Home");
+
+            }
+        }
+
+
+        private string GetUserId()
+        {
+            return User?.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value;
         }
     }
 }
