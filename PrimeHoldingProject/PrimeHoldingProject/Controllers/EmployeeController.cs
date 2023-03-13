@@ -69,6 +69,7 @@ namespace PrimeHoldingProject.Controllers
             }
         }
         [HttpGet]
+        [Authorize(Roles = EmployeeConstant)]
         public async Task<IActionResult> Edit()
         {
             try
@@ -111,6 +112,7 @@ namespace PrimeHoldingProject.Controllers
 
             }
         }
+        [Authorize(Roles = EmployeeConstant)]
         public async Task<IActionResult> QuitJob()
         {
             try
@@ -145,7 +147,6 @@ namespace PrimeHoldingProject.Controllers
                 return RedirectToAction("Index", "Home");
             }
         }
-
 
         private string GetUserId()
         {

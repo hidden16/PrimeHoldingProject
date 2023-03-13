@@ -109,6 +109,7 @@ namespace PrimeHoldingProject.Controllers
                 return RedirectToAction("Index", "Home");
             }
         }
+        [Authorize(Roles = ManagerConstant)]
         public async Task<IActionResult> Delete(Guid taskId)
         {
             try
