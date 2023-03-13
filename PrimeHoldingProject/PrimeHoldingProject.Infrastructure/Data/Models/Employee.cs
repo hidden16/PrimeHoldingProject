@@ -21,12 +21,10 @@ namespace PrimeHoldingProject.Infrastructure.Data.Models
         [Required]
         [Column(TypeName = "decimal(7,2)")]
         public decimal Salary { get; set; }
-        [Required]
-        public Guid ManagerId { get; set; }
-        public Manager Manager { get; set; } = null!;
-        [Required]
-        public Guid ApplicationUserId { get; set; }
-        public ApplicationUser ApplicationUser { get; set; } = null!;
+        public Guid? ManagerId { get; set; }
+        public Manager? Manager { get; set; }
+        public Guid? ApplicationUserId { get; set; }
+        public ApplicationUser? ApplicationUser { get; set; } = null!;
         public List<Task> Tasks { get; set; } = new List<Task>();
     }
 }

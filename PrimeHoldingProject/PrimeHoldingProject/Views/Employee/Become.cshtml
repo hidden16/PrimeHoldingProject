@@ -1,11 +1,7 @@
 ﻿@using PrimeHoldingProject.Core.Models.User;
 @model UserEmployeeViewModel
-@{
-    ViewData["Title"] = "Become Employee";
-}
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
-<h1 class="text-center">@ViewData["Title"]</h1>
+<h1 class="text-center">Become Employee</h1>
 <div class="row">
     <div class="col-md-4 offset-md-4">
         <p class="text-center">Please confirm your personal information and fill the blank!</p>
@@ -40,7 +36,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="@Model.ManagerId">Choose your manager</label>
-                <i class="fa-solid fa-caret-down" data-fa-transform="down-32 right-322"></i>
+                <i class="fa-solid fa-caret-down" data-fa-transform="down-32 right-232"></i>
                 <select asp-for="@Model.ManagerId" class="form-control">
                     @foreach (var manager in @Model.Managers)
                     {

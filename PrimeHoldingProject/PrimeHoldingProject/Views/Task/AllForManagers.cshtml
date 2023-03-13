@@ -1,0 +1,35 @@
+﻿@using PrimeHoldingProject.Core.Models.Task;
+@using static PrimeHoldingProject.Infrastructure.Constants.RoleConstants;
+@model IEnumerable<TaskViewModel>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+<link rel="stylesheet" href="~/lib/toastr/toastr.min.css" />
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<h2 class="text-center">All Tasks For Managers</h2>
+<hr />
+
+<partial name="_UserMessages" />
+<div class="text-center row">
+    @foreach (var task in Model)
+    {
+        <div class="card col-4" style="width: 20rem; ">
+            <div class="card-body">
+                @if (User.IsInRole(ManagerConstant))
+                {
+                    <a asp-controller="Task" asp-action="Edit" asp-route-taskId="@task.Id">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </a>
+                    <a asp-controller="Task" asp-action="Delete" asp-route-taskId="@task.Id">
+                        <i class="fa-solid fa-trash"></i>
+                    </a>
+                }
+                <h5 class="card-title mt-1">@task.Title</h5>
+                <p>Description: @task.Description</p>
+                <p class="mb-0">Due date: @task.DueDate</p>
+            </div>
+        </div>
+    }
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
+<script src="~/lib/toastr/toastr.min.js"></script>

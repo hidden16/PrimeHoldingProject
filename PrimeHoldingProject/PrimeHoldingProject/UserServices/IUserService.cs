@@ -5,5 +5,6 @@ namespace PrimeHoldingProject.UserServices
     public interface IUserService
     {
         Task<UserEmployeeViewModel> GetUserEmployeeInfoAsync(Guid userId);
+        Task<UserManagerViewModel> GetUserManagerInfoAsync(Guid userId);
     }
 }

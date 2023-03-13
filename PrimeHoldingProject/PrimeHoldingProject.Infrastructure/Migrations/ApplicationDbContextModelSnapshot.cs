@@ -254,7 +254,7 @@ namespace PrimeHoldingProject.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("ApplicationUserId")
+                    b.Property<Guid?>("ApplicationUserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("BirthDate")
@@ -277,7 +277,7 @@ namespace PrimeHoldingProject.Infrastructure.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<Guid>("ManagerId")
+                    b.Property<Guid?>("ManagerId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("ModifiedOn")
@@ -293,7 +293,8 @@ namespace PrimeHoldingProject.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("ApplicationUserId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[ApplicationUserId] IS NOT NULL");
 
                     b.HasIndex("ManagerId");
 
@@ -306,7 +307,7 @@ namespace PrimeHoldingProject.Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("ApplicationUserId")
+                    b.Property<Guid?>("ApplicationUserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("BirthDate")
@@ -344,7 +345,8 @@ namespace PrimeHoldingProject.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("ApplicationUserId")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[ApplicationUserId] IS NOT NULL");
 
                     b.ToTable("Managers");
                 });
@@ -377,6 +379,9 @@ namespace PrimeHoldingProject.Infrastructure.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
+                    b.Property<Guid>("ManagerId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
@@ -387,6 +392,8 @@ namespace PrimeHoldingProject.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("EmployeeId");
+
+                    b.HasIndex("ManagerId");
 
                     b.ToTable("Tasks");
                 });
@@ -446,15 +453,12 @@ namespace PrimeHoldingProject.Infrastructure.Migrations
                 {
                     b.HasOne("PrimeHoldingProject.Infrastructure.Data.Models.ApplicationUser", "ApplicationUser")
                         .WithOne("Employee")
-                        .HasForeignKey("PrimeHoldingProject.Infrastructure.Data.Models.Employee", "ApplicationUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PrimeHoldingProject.Infrastructure.Data.Models.Employee", "ApplicationUserId");
 
                     b.HasOne("PrimeHoldingProject.Infrastructure.Data.Models.Manager", "Manager")
                         .WithMany("Employees")
                         .HasForeignKey("ManagerId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("ApplicationUser");
 
@@ -465,9 +469,7 @@ namespace PrimeHoldingProject.Infrastructure.Migrations
                 {
                     b.HasOne("PrimeHoldingProject.Infrastructure.Data.Models.ApplicationUser", "ApplicationUser")
                         .WithOne("Manager")
-                        .HasForeignKey("PrimeHoldingProject.Infrastructure.Data.Models.Manager", "ApplicationUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PrimeHoldingProject.Infrastructure.Data.Models.Manager", "ApplicationUserId");
 
                     b.Navigation("ApplicationUser");
                 });
@@ -478,7 +480,15 @@ namespace PrimeHoldingProject.Infrastructure.Migrations
                         .WithMany("Tasks")
                         .HasForeignKey("EmployeeId");
 
+                    b.HasOne("PrimeHoldingProject.Infrastructure.Data.Models.Manager", "Manager")
+                        .WithMany("Tasks")
+                        .HasForeignKey("ManagerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Employee");
+
+                    b.Navigation("Manager");
                 });
 
             modelBuilder.Entity("PrimeHoldingProject.Infrastructure.Data.Models.ApplicationUser", b =>
@@ -496,6 +506,8 @@ namespace PrimeHoldingProject.Infrastructure.Migrations
             modelBuilder.Entity("PrimeHoldingProject.Infrastructure.Data.Models.Manager", b =>
                 {
                     b.Navigation("Employees");
+
+                    b.Navigation("Tasks");
                 });
 #pragma warning restore 612, 618
         }

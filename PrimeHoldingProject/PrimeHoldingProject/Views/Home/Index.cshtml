@@ -1,11 +1,26 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@using PrimeHoldingProject.Core.Models.Employee;
+@model IEnumerable<EmployeeRanklistViewModel>
 <link rel="stylesheet" href="~/lib/toastr/toastr.min.css" />
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <partial name="_UserMessages" />
+<h2 class="text-center">Employee Ranklist</h2>
+<h3 class="text-center">- Top 5 employees for the past month -</h3>
+<h4 class="text-center">-- Ordered by tasks done --</h4>
+<hr />
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    @{
+        var i = 0;
+    }
+    @foreach (var employee in Model)
+    {
+        i++;
+        <div class="card col-4" style="width: 20rem; ">
+            <div class="card-body">
+                <p>@i</p>
+                <h5 class="card-title mt-1">Name: @employee.FullName</h5>
+                <p>Tasks done: @employee.TasksDoneCount</p>
+            </div>
+        </div>
+    }
 </div>
 <script src="~/lib/toastr/toastr.min.js"></script>

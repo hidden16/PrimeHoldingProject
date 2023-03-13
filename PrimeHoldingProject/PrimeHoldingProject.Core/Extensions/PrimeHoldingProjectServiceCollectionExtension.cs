@@ -11,7 +11,8 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<IEmployeeService, EmployeeService>();
-            //services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IManagerService, ManagerService>();
+            services.AddScoped<ITaskService, TaskService>();
 
             return services;
         }

@@ -17,5 +17,8 @@ namespace PrimeHoldingProject.Infrastructure.Data.Models
 
         public Guid? EmployeeId { get; set; }
         public Employee? Employee { get; set; }
+        [Required]
+        public Guid ManagerId { get; set; }
+        public Manager Manager { get; set; } = null!;
     }
 }

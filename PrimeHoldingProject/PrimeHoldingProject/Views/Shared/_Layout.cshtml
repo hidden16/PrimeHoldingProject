@@ -23,16 +23,43 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
+                        @if(User.IsInRole(EmployeeConstant) || User.IsInRole(ManagerConstant))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Task" asp-action="All">All Tasks</a>
+                            </li>
+                        }
                         @if (!User.IsInRole(EmployeeConstant) && !User.IsInRole(ManagerConstant))
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="Become">Become an employee</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Manager" asp-action="Become">Become a manager</a>
+                            </li>
                         }
                         @if (User.IsInRole(EmployeeConstant))
                         {
                             <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="MyTasks">My Tasks</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Employee" asp-action="Edit">Edit my information</a>
+                            </li>
+                        }
+                        @if (User.IsInRole(ManagerConstant))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Manager" asp-action="AllEmployees">All Employees</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Manager" asp-action="Edit">Edit my information</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Task" asp-action="CreateTask">Create Task</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-blue" asp-area="" asp-controller="Task" asp-action="AllForManagers" style="color: blue">All tasks for managers</a>
                             </li>
                         }
                     </ul>
@@ -49,7 +76,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2023 - PrimeHoldingProject - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2023 - PrimeHoldingProject </a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

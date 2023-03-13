@@ -1,25 +1,24 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+using PrimeHoldingProject.Core.Contracts;
 
 namespace PrimeHoldingProject.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IEmployeeService employeeService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger,
+            IEmployeeService employeeService)
         {
             _logger = logger;
+            this.employeeService = employeeService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
+            var employees = await employeeService.EmployeeRanklistAsync();
+            return View(employees);
         }
     }
 }

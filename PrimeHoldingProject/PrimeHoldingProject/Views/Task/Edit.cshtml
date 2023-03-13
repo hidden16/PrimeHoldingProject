@@ -1,0 +1,35 @@
+﻿@using PrimeHoldingProject.Core.Models.Task;
+@model TaskForEditViewModel
+<h2 class="text-center">Edit Task</h2>
+<hr />
+
+<div class="row">
+    <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+        <form asp-action="Edit" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label asp-for="@Model.Title" class="form-label">Name</label>
+                <input asp-for="@Model.Title" class="form-control" aria-required="true" />
+                <span asp-validation-for="@Model.Title" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Description" class="form-label">Description</label>
+                <textarea asp-for="@Model.Description" class="form-control" aria-required="true" rows="5"></textarea>
+                <span asp-validation-for="@Model.Description" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <div class="md-form">
+                    <label asp-for="@Model.DueDate">Due Date</label>
+                    <input asp-for="@Model.DueDate" type="date" class="form-control datepicker" value="">
+                    <span asp-validation-for="@Model.DueDate" class="text-danger"></span>
+                </div>
+            </div>
+            <input asp-for="@Model.Id" type="hidden" />
+            <div class="mb-3">
+                <input class="btn btn-primary" type="submit" value="Edit" />
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+}

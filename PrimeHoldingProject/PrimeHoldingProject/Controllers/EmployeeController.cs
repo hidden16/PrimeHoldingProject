@@ -7,7 +7,8 @@ using PrimeHoldingProject.UserServices;
 using System.Security.Claims;
 using static PrimeHoldingProject.Infrastructure.Constants.RoleConstants;
 using static PrimeHoldingProject.Core.Constants.MessageConstant;
-
+using Microsoft.AspNetCore.Identity;
+using PrimeHoldingProject.Infrastructure.Data.Models;
 
 namespace PrimeHoldingProject.Controllers
 {
@@ -16,11 +17,14 @@ namespace PrimeHoldingProject.Controllers
     {
         private readonly IUserService userService;
         private readonly IEmployeeService employeeService;
+        private readonly SignInManager<ApplicationUser> signInManager;
         public EmployeeController(IUserService userService,
-            IEmployeeService employeeService)
+            IEmployeeService employeeService,
+            SignInManager<ApplicationUser> signInManager)
         {
             this.userService = userService;
             this.employeeService = employeeService;
+            this.signInManager = signInManager;
         }
         [HttpGet]
         public async Task<IActionResult> Become()
@@ -54,13 +58,15 @@ namespace PrimeHoldingProject.Controllers
                 }
                 var userId = GetUserId();
                 await employeeService.BecomeEmployeeAsync(model, Guid.Parse(userId));
+                TempData[SuccessMessage] = "You are an employee now! Please log in for changes to get saved.";
+                await signInManager.SignOutAsync();
+                return RedirectToAction("Login", "User");
             }
             catch (ArgumentException)
             {
                 ModelState.AddModelError("", "Invalid user!");
                 return View(model);
             }
-            return RedirectToAction("Index", "Home");
         }
         [HttpGet]
         public async Task<IActionResult> Edit()
@@ -82,6 +88,11 @@ namespace PrimeHoldingProject.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    ModelState.AddModelError("", "Invalid info.");
+                    return View();
+                }
                 var userId = GetUserId();
                 await employeeService.EditEmployee(model, Guid.Parse(userId));
                 TempData[SuccessMessage] = "You successfully updated your information!";
@@ -98,6 +109,40 @@ namespace PrimeHoldingProject.Controllers
                 TempData[ErrorMessage] = "Invalid user.";
                 return RedirectToAction("Index", "Home");
 
+            }
+        }
+        public async Task<IActionResult> QuitJob()
+        {
+            try
+            {
+                await employeeService.QuitJobAsync(Guid.Parse(GetUserId()));
+                await signInManager.SignOutAsync();
+                TempData[SuccessMessage] = "You succesfully left work! Please log in to confirm changes!";
+                return RedirectToAction("Login", "User");
+            }
+            catch (ArgumentNullException)
+            {
+                TempData[ErrorMessage] = "Invalid employee!";
+                return RedirectToAction("Index", "Home");
+            }
+            catch (ArgumentException)
+            {
+                TempData[ErrorMessage] = "Invalid user!";
+                return RedirectToAction("Index", "Home");
+            }
+        }
+        [HttpGet]
+        public async Task<IActionResult> MyTasks()
+        {
+            try
+            {
+                var tasks = await employeeService.MyTasksAsync(Guid.Parse(GetUserId()));
+                return View(tasks);
+            }
+            catch (Exception)
+            {
+                TempData[ErrorMessage] = "Something went wrong!";
+                return RedirectToAction("Index", "Home");
             }
         }
 

@@ -45,5 +45,23 @@ namespace PrimeHoldingProject.UserServices
                 Managers = managersDto
             };
         }
+
+        public async Task<UserManagerViewModel> GetUserManagerInfoAsync(Guid userId)
+        {
+            var user = await userRepository.GetByIdAsync(userId);
+            if (user == null)
+            {
+                throw new ArgumentException();
+            }
+
+            return new UserManagerViewModel()
+            {
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                BirthDate = user.BirthDate,
+                EmailAddress = user.Email,
+                Salary = 0
+            };
+        }
     }
 }
