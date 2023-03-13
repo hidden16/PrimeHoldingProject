@@ -12,8 +12,8 @@ using PrimeHoldingProject.Infrastructure.Data;
 namespace PrimeHoldingProject.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230313002806_EmployeeGotSmallChangeMigration")]
-    partial class EmployeeGotSmallChangeMigration
+    [Migration("20230313004803_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -50,6 +50,22 @@ namespace PrimeHoldingProject.Infrastructure.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("31c41c0d-eda5-4f60-8108-614d8c8f8a13"),
+                            ConcurrencyStamp = "dac33094-4f8d-4151-aab6-13c7185b6b80",
+                            Name = "Employee",
+                            NormalizedName = "EMPLOYEE"
+                        },
+                        new
+                        {
+                            Id = new Guid("b4997092-22f2-45c4-80a2-8db6ff981a4f"),
+                            ConcurrencyStamp = "3861b38a-6f56-459a-91c7-d094725e205b",
+                            Name = "Manager",
+                            NormalizedName = "MANAGER"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>

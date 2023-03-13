@@ -147,7 +147,6 @@ namespace PrimeHoldingProject.Controllers
                 return RedirectToAction("Index", "Home");
             }
         }
-
         private string GetUserId()
         {
             return User?.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value;
